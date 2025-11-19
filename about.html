@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Decorus Blinds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .hero-about {
+            background-color: #1e293b;
+            background-image: linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.9)), url('https://placehold.co/1920x800/0f172a/ffffff?text=Our+Team+at+Work');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-bold text-slate-900 tracking-tight">
+                <div class="bg-blue-600 text-white p-1.5 rounded-lg"><i data-lucide="layers" class="w-6 h-6"></i></div>
+                DecoShade
+            </a>
+
+            <nav class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                <a href="index.html" class="text-blue-600">Home</a>
+                <div class="relative group h-20 flex items-center">
+                    <button class="flex items-center gap-1 hover:text-blue-600 transition">
+                        Collections <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute top-20 left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-2 border-blue-600 hidden group-hover:block overflow-hidden transition-all">
+                        <div class="p-4 space-y-1">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Soft Furnishings</p>
+                            <a href="curtains.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Luxury Curtains</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Blinds</p>
+                            <a href="blackout.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Blackout Rollers</a>
+                            <a href="sunscreen.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Sunscreen / Solar</a>
+                            <a href="zebra.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Zebra (Day & Night)</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <a href="motorization.html" class="block px-4 py-2 text-blue-600 font-semibold hover:bg-blue-50 rounded-lg flex items-center gap-2">
+                                <i data-lucide="zap" class="w-4 h-4"></i> Motorization
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
+                <a href="benefits.html" class="hover:text-blue-600 transition">Why Us</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg flex items-center gap-2 text-sm">
+                    Book Free Visit <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+             <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="index.html" class="block py-2 font-medium text-blue-600">Home</a>
+                <a href="about.html" class="block py-1 text-slate-700 pl-4 border-l-2 border-blue-100 font-bold">About Us</a>
+                <a href="contact.html" class="block py-2 font-medium text-slate-700">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-about text-white h-[50vh] flex items-center justify-center text-center px-4">
+        <div>
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Crafting the Perfect View</h1>
+            <p class="text-xl opacity-90 max-w-2xl mx-auto">
+                DecoShade brings the showroom to you. We specialize in premium, made-to-measure window treatments with a focus on European quality and local expertise.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full -z-10"></div>
+                    <img src="https://placehold.co/800x600/cbd5e1/1e293b?text=Our+Story" class="rounded-2xl shadow-2xl w-full object-cover" alt="DecoShade Team">
+                    <div class="absolute bottom-8 right-[-20px] bg-white p-6 rounded-xl shadow-xl border-l-4 border-blue-600 hidden md:block">
+                        <p class="text-3xl font-bold text-slate-900">10+</p>
+                        <p class="text-sm text-slate-500 uppercase tracking-wide">Years of Excellence</p>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">More Than Just Blinds</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Founded on the principle that window treatments should be an effortless blend of functionality and design, DecoShade has grown from a small team of passionate fitters to Dubai's leading bespoke studio.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        We saw a gap in the market for truly "White Glove" service. While others sell products, we sell the finished look—perfectly measured, flawlessly installed, and backed by genuine warranties.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="flex items-center gap-2 text-sm font-bold text-slate-800">
+                            <i data-lucide="check-circle" class="text-green-500"></i> European Fabrics
+                        </div>
+                        <div class="flex items-center gap-2 text-sm font-bold text-slate-800">
+                            <i data-lucide="check-circle" class="text-green-500"></i> In-House Installers
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Process -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">The "White Glove" Experience</h2>
+                <p class="text-slate-500 mt-2">How we make luxury simple for you.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition text-center group">
+                    <div class="w-16 h-16 mx-auto bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i data-lucide="calendar" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">1. Consultation</h3>
+                    <p class="text-sm text-slate-500">We bring our full fabric collection to your home, helping you match colors in your own lighting.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition text-center group">
+                    <div class="w-16 h-16 mx-auto bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i data-lucide="ruler" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">2. Precision Measure</h3>
+                    <p class="text-sm text-slate-500">Our experts use laser technology to measure every millimeter, ensuring a gap-free fit.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition text-center group">
+                    <div class="w-16 h-16 mx-auto bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i data-lucide="scissors" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">3. Bespoke Crafting</h3>
+                    <p class="text-sm text-slate-500">Your order is sent to our local workshop where it is crafted to your exact specifications within days.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition text-center group">
+                    <div class="w-16 h-16 mx-auto bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i data-lucide="hammer" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">4. Flawless Install</h3>
+                    <p class="text-sm text-slate-500">Our professional team installs your blinds, programs motors, and cleans up before leaving.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-white text-center">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Ready to meet the team?</h2>
+            <p class="text-lg text-slate-600 mb-8">
+                Schedule a free visit. No pressure, just expert advice and beautiful samples.
+            </p>
+            <button onclick="openModal()" class="bg-slate-900 text-white hover:bg-slate-800 px-8 py-4 rounded-full font-bold text-lg shadow-xl transition transform hover:scale-105">
+                Book Appointment
+            </button>
+        </div>
+    </section>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="flex min-h-full items-center justify-center p-4 text-center">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="bg-white px-8 py-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900" id="modal-title">Book Free Consultation</h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-500"><i data-lucide="x" class="w-6 h-6"></i></button>
+                    </div>
+                    <form onsubmit="handleSubmit(event)" class="space-y-4">
+                        <input type="text" placeholder="Full Name" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <select class="w-full px-4 py-3 border rounded-lg bg-white outline-none">
+                            <option selected>General Inquiry</option>
+                            <option>Roller Blinds</option>
+                            <option>Curtains</option>
+                        </select>
+                        <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-lg shadow-lg">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
+        <p>&copy; 2025 DecoShade. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const modal = document.getElementById('quoteModal');
+        const mobileMenu = document.getElementById('mobile-menu');
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        function openModal() { modal.classList.remove('hidden'); }
+        function closeModal() { modal.classList.add('hidden'); }
+        function handleSubmit(e) { e.preventDefault(); alert("Thank you! We have received your request."); closeModal(); }
+    </script>
+</body>
+</html>

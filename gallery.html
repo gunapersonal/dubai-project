@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspiration Gallery - Decorus Blinds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .hero-gallery {
+            background-color: #1e293b;
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6)), url('https://placehold.co/1920x800/1e293b/ffffff?text=Our+Portfolio');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Smooth fade animation for filtering */
+        .gallery-item {
+            transition: all 0.4s ease-in-out;
+        }
+        .gallery-item.hidden {
+            display: none;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        .gallery-item.visible {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-bold text-slate-900 tracking-tight">
+                <div class="bg-blue-600 text-white p-1.5 rounded-lg"><i data-lucide="layers" class="w-6 h-6"></i></div>
+                DecoShade
+            </a>
+
+            <nav class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                <a href="index.html" class="text-blue-600">Home</a>
+                <div class="relative group h-20 flex items-center">
+                    <button class="flex items-center gap-1 hover:text-blue-600 transition">
+                        Collections <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute top-20 left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-2 border-blue-600 hidden group-hover:block overflow-hidden transition-all">
+                        <div class="p-4 space-y-1">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Soft Furnishings</p>
+                            <a href="curtains.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Luxury Curtains</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Blinds</p>
+                            <a href="blackout.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Blackout Rollers</a>
+                            <a href="sunscreen.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Sunscreen / Solar</a>
+                            <a href="zebra.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Zebra (Day & Night)</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <a href="motorization.html" class="block px-4 py-2 text-blue-600 font-semibold hover:bg-blue-50 rounded-lg flex items-center gap-2">
+                                <i data-lucide="zap" class="w-4 h-4"></i> Motorization
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="gallery.html" class="text-blue-600 font-semibold transition">Gallery</a>
+                <a href="benefits.html" class="hover:text-blue-600 transition">Why Us</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg flex items-center gap-2 text-sm">
+                    Book Free Visit <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+             <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="index.html" class="block py-2 font-medium text-blue-600">Home</a>
+                <a href="gallery.html" class="block py-2 font-medium text-slate-700">Gallery</a>
+                <a href="contact.html" class="block py-2 font-medium text-slate-700">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gallery text-white h-[50vh] flex items-center justify-center text-center px-4">
+        <div>
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Real Homes. Real Transformations.</h1>
+            <p class="text-xl opacity-90 max-w-2xl mx-auto">
+                Browse our latest projects across Dubai, Abu Dhabi, and Sharjah.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active bg-slate-900 text-white px-6 py-2 rounded-full font-semibold shadow-md transition hover:scale-105" data-filter="all">All Projects</button>
+                <button class="filter-btn bg-white text-slate-600 border border-slate-200 px-6 py-2 rounded-full font-semibold shadow-sm hover:bg-blue-50 hover:text-blue-600 transition" data-filter="curtains">Curtains</button>
+                <button class="filter-btn bg-white text-slate-600 border border-slate-200 px-6 py-2 rounded-full font-semibold shadow-sm hover:bg-blue-50 hover:text-blue-600 transition" data-filter="blinds">Blinds</button>
+                <button class="filter-btn bg-white text-slate-600 border border-slate-200 px-6 py-2 rounded-full font-semibold shadow-sm hover:bg-blue-50 hover:text-blue-600 transition" data-filter="motorized">Motorization</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+                
+                <!-- Project 1: Curtains -->
+                <div class="gallery-item relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer h-96" data-category="curtains">
+                    <img src="https://placehold.co/600x800/e2e8f0/475569?text=Wave+Curtains+Villa" alt="Wave Curtains" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Arabian Ranches</span>
+                            <h3 class="text-xl font-bold mb-1">Sheer Wave Curtains</h3>
+                            <p class="text-sm text-gray-300 mb-4">Ceiling-to-floor installation with Somfy tracks.</p>
+                            <button onclick="openModal('Curtains')" class="bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-50 transition">Get This Look</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Blinds (Blackout) -->
+                <div class="gallery-item relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer h-96" data-category="blinds">
+                    <img src="https://placehold.co/600x800/1e293b/ffffff?text=Blackout+Bedroom" alt="Blackout Roller" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Dubai Marina</span>
+                            <h3 class="text-xl font-bold mb-1">Total Blackout System</h3>
+                            <p class="text-sm text-gray-300 mb-4">Cassette roller blinds with side channels.</p>
+                            <button onclick="openModal('Blackout Blinds')" class="bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-50 transition">Get This Look</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Motorized -->
+                <div class="gallery-item relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer h-96" data-category="motorized">
+                    <img src="https://placehold.co/600x800/3b82f6/ffffff?text=Smart+Home+Blinds" alt="Motorized Blinds" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Palm Jumeirah</span>
+                            <h3 class="text-xl font-bold mb-1">Smart Villa Automation</h3>
+                            <p class="text-sm text-gray-300 mb-4">Whole-home integration with Alexa.</p>
+                            <button onclick="openModal('Motorization')" class="bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-50 transition">Get This Look</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Blinds (Zebra) -->
+                <div class="gallery-item relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer h-96" data-category="blinds">
+                    <img src="https://placehold.co/600x800/94a3b8/ffffff?text=Zebra+Blinds+Living" alt="Zebra Blinds" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Jumeirah Park</span>
+                            <h3 class="text-xl font-bold mb-1">Textured Zebra Blinds</h3>
+                            <p class="text-sm text-gray-300 mb-4">Day & Night privacy control for living areas.</p>
+                            <button onclick="openModal('Zebra Blinds')" class="bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-50 transition">Get This Look</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Curtains (Pinch Pleat) -->
+                <div class="gallery-item relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer h-96" data-category="curtains">
+                    <img src="https://placehold.co/600x800/cbd5e1/ffffff?text=Pinch+Pleat+Drapes" alt="Pinch Pleat" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Emirates Hills</span>
+                            <h3 class="text-xl font-bold mb-1">Classic Pinch Pleat</h3>
+                            <p class="text-sm text-gray-300 mb-4">Heavy velvet with blackout lining.</p>
+                            <button onclick="openModal('Curtains')" class="bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-50 transition">Get This Look</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 6: Blinds (Sunscreen) -->
+                 <div class="gallery-item relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer h-96" data-category="blinds">
+                    <img src="https://placehold.co/600x800/f59e0b/ffffff?text=Office+Sunscreen" alt="Sunscreen" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Business Bay</span>
+                            <h3 class="text-xl font-bold mb-1">Commercial Sunscreen</h3>
+                            <p class="text-sm text-gray-300 mb-4">3% openness for glare reduction.</p>
+                            <button onclick="openModal('Sunscreen Blinds')" class="bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-50 transition">Get This Look</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Instagram Placeholder -->
+    <section class="py-12 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-6 text-slate-400">
+                <i data-lucide="instagram" class="w-6 h-6"></i>
+                <span class="font-semibold uppercase tracking-widest">Follow @DecoShade_UAE</span>
+            </div>
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Daily Inspiration</h2>
+            <div class="grid grid-cols-4 gap-4 opacity-70">
+                <img src="https://placehold.co/300x300/e2e8f0/94a3b8?text=Insta+1" class="rounded-lg hover:opacity-100 transition cursor-pointer">
+                <img src="https://placehold.co/300x300/cbd5e1/64748b?text=Insta+2" class="rounded-lg hover:opacity-100 transition cursor-pointer">
+                <img src="https://placehold.co/300x300/94a3b8/475569?text=Insta+3" class="rounded-lg hover:opacity-100 transition cursor-pointer">
+                <img src="https://placehold.co/300x300/64748b/1e293b?text=Insta+4" class="rounded-lg hover:opacity-100 transition cursor-pointer">
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="flex min-h-full items-center justify-center p-4 text-center">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="bg-white px-8 py-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900" id="modal-title">Get a Quote for This Look</h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-500"><i data-lucide="x" class="w-6 h-6"></i></button>
+                    </div>
+                    <form onsubmit="handleSubmit(event)" class="space-y-4">
+                        <input type="text" placeholder="Full Name" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <select id="modal-product-select" class="w-full px-4 py-3 border rounded-lg bg-white outline-none">
+                            <option selected>General Inquiry</option>
+                            <option value="Curtains">Curtains & Drapes</option>
+                            <option value="Blackout Blinds">Blackout Blinds</option>
+                            <option value="Sunscreen Blinds">Sunscreen Blinds</option>
+                            <option value="Zebra Blinds">Zebra Blinds</option>
+                            <option value="Motorization">Motorization</option>
+                        </select>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-lg shadow-lg">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
+        <p>&copy; 2025 DecoShade. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const modal = document.getElementById('quoteModal');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const productSelect = document.getElementById('modal-product-select');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        // Mobile Menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        // Modal Logic
+        function openModal(productName = '') { 
+            modal.classList.remove('hidden'); 
+            if(productName) {
+                // Try to find option with value or text matching productName
+                const options = Array.from(productSelect.options);
+                const optionToSelect = options.find(item => item.value === productName || item.text.includes(productName));
+                if(optionToSelect) productSelect.value = optionToSelect.value;
+            }
+        }
+        function closeModal() { modal.classList.add('hidden'); }
+        function handleSubmit(e) { e.preventDefault(); alert("Thank you! We have received your request."); closeModal(); }
+
+        // Filtering Logic
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-slate-900', 'text-white');
+                    b.classList.add('bg-white', 'text-slate-600');
+                });
+                // Add active class to clicked
+                btn.classList.remove('bg-white', 'text-slate-600');
+                btn.classList.add('bg-slate-900', 'text-white');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hidden');
+                        item.classList.add('visible');
+                    } else {
+                        item.classList.add('hidden');
+                        item.classList.remove('visible');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

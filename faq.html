@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center & FAQ - Decorus Blinds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .hero-faq {
+            background-color: #1e293b;
+            background-image: radial-gradient(circle at top right, #334155, #1e293b);
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Smooth accordion transition */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease;
+            opacity: 0;
+        }
+        .faq-answer.open {
+            max-height: 500px; /* Arbitrary large height */
+            opacity: 1;
+            padding-bottom: 1.5rem;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-icon.rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-bold text-slate-900 tracking-tight">
+                <div class="bg-blue-600 text-white p-1.5 rounded-lg"><i data-lucide="layers" class="w-6 h-6"></i></div>
+                DecoShade
+            </a>
+
+            <nav class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                <a href="index.html" class="text-blue-600">Home</a>
+                <div class="relative group h-20 flex items-center">
+                    <button class="flex items-center gap-1 hover:text-blue-600 transition">
+                        Collections <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute top-20 left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-2 border-blue-600 hidden group-hover:block overflow-hidden transition-all">
+                        <div class="p-4 space-y-1">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Soft Furnishings</p>
+                            <a href="curtains.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Luxury Curtains</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Blinds</p>
+                            <a href="blackout.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Blackout Rollers</a>
+                            <a href="sunscreen.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Sunscreen / Solar</a>
+                            <a href="zebra.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Zebra (Day & Night)</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <a href="motorization.html" class="block px-4 py-2 text-blue-600 font-semibold hover:bg-blue-50 rounded-lg flex items-center gap-2">
+                                <i data-lucide="zap" class="w-4 h-4"></i> Motorization
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
+                <a href="benefits.html" class="hover:text-blue-600 transition">Why Us</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg flex items-center gap-2 text-sm">
+                    Book Free Visit <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+             <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="index.html" class="block py-2 font-medium text-blue-600">Home</a>
+                <div class="pl-4 border-l-2 border-gray-100 space-y-2">
+                    <span class="text-xs font-bold text-gray-400 uppercase">Our Products</span>
+                    <a href="curtains.html" class="block py-1 text-slate-700">Curtains & Drapes</a>
+                    <a href="blackout.html" class="block py-1 text-slate-700">Blackout Blinds</a>
+                    <a href="sunscreen.html" class="block py-1 text-slate-700">Sunscreen Blinds</a>
+                    <a href="zebra.html" class="block py-1 text-slate-700">Zebra Blinds</a>
+                </div>
+                <a href="contact.html" class="block py-2 font-medium text-slate-700">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Search -->
+    <section class="hero-faq text-white px-4 text-center">
+        <div class="max-w-3xl w-full">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6">How can we help?</h1>
+            <div class="relative max-w-xl mx-auto">
+                <input type="text" id="faq-search" placeholder="Search for answers (e.g., 'warranty', 'cleaning')..." 
+                    class="w-full px-6 py-4 rounded-full text-slate-800 shadow-lg focus:ring-4 focus:ring-blue-500/50 outline-none pl-12">
+                <i data-lucide="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main FAQ Content -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto space-y-12">
+            
+            <!-- Category 1: Ordering & Process -->
+            <div class="faq-category">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <i data-lucide="clipboard-list" class="text-blue-600"></i> Ordering & Process
+                </h2>
+                <div class="space-y-4">
+                    
+                    <!-- Q1 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden faq-item">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-slate-800 hover:bg-slate-50 flex justify-between items-center transition">
+                            Is the initial consultation really free?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon"></i>
+                        </button>
+                        <div class="faq-answer px-6 text-slate-600 leading-relaxed">
+                            Yes, absolutely. We offer a 100% free, no-obligation site visit across Dubai, Abu Dhabi, and Sharjah. Our consultant brings fabric samples, takes precise measurements, and provides a quote on the spot.
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden faq-item">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-slate-800 hover:bg-slate-50 flex justify-between items-center transition">
+                            How long does it take to get my blinds?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon"></i>
+                        </button>
+                        <div class="faq-answer px-6 text-slate-600 leading-relaxed">
+                            For in-stock fabrics fabricated locally, we can often install within **3 to 5 working days**. Specialized or imported European fabrics may take 7-10 days. We will provide a confirmed timeline during your consultation.
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden faq-item">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-slate-800 hover:bg-slate-50 flex justify-between items-center transition">
+                            Do you offer payment plans?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon"></i>
+                        </button>
+                        <div class="faq-answer px-6 text-slate-600 leading-relaxed">
+                            Yes! We have partnered with Tabby and Tamara to offer flexible, interest-free installment plans. You can split your purchase into 4 convenient payments.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2: Products & Care -->
+            <div class="faq-category">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <i data-lucide="sparkles" class="text-blue-600"></i> Products & Care
+                </h2>
+                <div class="space-y-4">
+                    
+                    <!-- Q4 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden faq-item">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-slate-800 hover:bg-slate-50 flex justify-between items-center transition">
+                            How do I clean my roller blinds?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon"></i>
+                        </button>
+                        <div class="faq-answer px-6 text-slate-600 leading-relaxed">
+                            Maintenance is very low. For regular cleaning, simply dust with a feather duster or use a vacuum cleaner with a brush attachment on low suction. For stains, wipe gently with a damp cloth and mild soap. Do not use harsh chemicals or bleach.
+                        </div>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden faq-item">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-slate-800 hover:bg-slate-50 flex justify-between items-center transition">
+                            Do I need an electrician for motorized blinds?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon"></i>
+                        </button>
+                        <div class="faq-answer px-6 text-slate-600 leading-relaxed">
+                            Not necessarily! We offer **Wire-Free Rechargeable Motors** that install just like manual blinds—no cables or electrician required. The battery lasts 6-12 months per charge. If you are building a new home, we also offer **Hardwired** options that connect to mains power.
+                        </div>
+                    </div>
+
+                    <!-- Q6 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden faq-item">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-slate-800 hover:bg-slate-50 flex justify-between items-center transition">
+                            Can I see out of sunscreen blinds at night?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon"></i>
+                        </button>
+                        <div class="faq-answer px-6 text-slate-600 leading-relaxed">
+                            No. Sunscreen blinds depend on the light source. During the day, it's brighter outside, so you can see out. At night, when your lights are on inside, people outside can see in. For bedrooms, we recommend a Dual System (Sunscreen + Blackout) or Curtains for night privacy.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3: Installation & Warranty -->
+            <div class="faq-category">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <i data-lucide="shield-check" class="text-blue-600"></i> Installation & Warranty
+                </h2>
+                <div class="space-y-4">
+                    
+                    <!-- Q7 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden faq-item">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-slate-800 hover:bg-slate-50 flex justify-between items-center transition">
+                            What kind of warranty do you offer?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon"></i>
+                        </button>
+                        <div class="faq-answer px-6 text-slate-600 leading-relaxed">
+                            We stand behind our quality. We offer a standard **1-Year Warranty** on all fabrics and manual mechanisms, and an extended **5-Year Warranty** on all motorized systems (Somfy, Tuya, Glydea).
+                        </div>
+                    </div>
+
+                    <!-- Q8 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden faq-item">
+                        <button class="w-full px-6 py-4 text-left font-semibold text-slate-800 hover:bg-slate-50 flex justify-between items-center transition">
+                            Is installation included in the price?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon"></i>
+                        </button>
+                        <div class="faq-answer px-6 text-slate-600 leading-relaxed">
+                            Yes, professional installation is included in your final quote. There are no hidden fees. Our team handles everything, including cleanup after the job is done.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Still stuck? -->
+        <div class="text-center mt-16">
+            <p class="text-slate-600 mb-4">Can't find what you're looking for?</p>
+            <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition shadow-md">
+                Contact Support
+            </a>
+        </div>
+    </section>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="flex min-h-full items-center justify-center p-4 text-center">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="bg-white px-8 py-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900" id="modal-title">Book Free Consultation</h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-500"><i data-lucide="x" class="w-6 h-6"></i></button>
+                    </div>
+                    <form onsubmit="handleSubmit(event)" class="space-y-4">
+                        <input type="text" placeholder="Full Name" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <select class="w-full px-4 py-3 border rounded-lg bg-white outline-none">
+                            <option>Curtains & Drapes</option>
+                            <option>Roller Blinds</option>
+                            <option>Motorization</option>
+                            <option>General Inquiry</option>
+                        </select>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-lg shadow-lg">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
+        <p>&copy; 2025 DecoShade. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const modal = document.getElementById('quoteModal');
+        const mobileMenu = document.getElementById('mobile-menu');
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        function openModal() { modal.classList.remove('hidden'); }
+        function closeModal() { modal.classList.add('hidden'); }
+        function handleSubmit(e) { e.preventDefault(); alert("Thank you! We have received your request."); closeModal(); }
+
+        // Accordion Logic
+        document.querySelectorAll('.faq-item button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+                
+                // Close others
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    if (other !== item) {
+                        other.querySelector('.faq-answer').classList.remove('open');
+                        other.querySelector('.faq-icon').classList.remove('rotate');
+                    }
+                });
+
+                // Toggle current
+                answer.classList.toggle('open');
+                icon.classList.toggle('rotate');
+            });
+        });
+
+        // Search Logic
+        const searchInput = document.getElementById('faq-search');
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            faqItems.forEach(item => {
+                const question = item.querySelector('button').innerText.toLowerCase();
+                const answer = item.querySelector('.faq-answer').innerText.toLowerCase();
+                
+                if (question.includes(term) || answer.includes(term)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zebra Blinds (Day & Night) - Decorus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .hero-zebra {
+            /* Modern, clean blue tone for the hero */
+            background-color: #3b82f6;
+            background-image: linear-gradient(rgba(29, 78, 216, 0.8), rgba(30, 64, 175, 0.6)), url('https://placehold.co/1920x800/eff6ff/1e40af?text=Modern+Zebra+Blinds');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-bold text-slate-900 tracking-tight">
+                <div class="bg-blue-600 text-white p-1.5 rounded-lg"><i data-lucide="layers" class="w-6 h-6"></i></div>
+                DecoShade
+            </a>
+
+            <nav class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                <a href="index.html" class="text-blue-600">Home</a>
+                <div class="relative group h-20 flex items-center">
+                    <button class="flex items-center gap-1 text-blue-600 transition">
+                        Collections <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute top-20 left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-2 border-blue-600 hidden group-hover:block overflow-hidden transition-all">
+                        <div class="p-4 space-y-1">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Soft Furnishings</p>
+                            <a href="curtains.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Luxury Curtains</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Blinds</p>
+                            <a href="blackout.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Blackout Rollers</a>
+                            <a href="sunscreen.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Sunscreen / Solar</a>
+                            <a href="zebra.html" class="block px-4 py-2 text-blue-600 bg-blue-50 rounded-lg font-semibold">Zebra (Day & Night)</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <a href="motorization.html" class="block px-4 py-2 text-blue-600 font-semibold hover:bg-blue-50 rounded-lg flex items-center gap-2">
+                                <i data-lucide="zap" class="w-4 h-4"></i> Motorization
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
+                <a href="benefits.html" class="hover:text-blue-600 transition">Why Us</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg flex items-center gap-2 text-sm">
+                    Book Free Visit <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+             <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="index.html" class="block py-2 font-medium text-blue-600">Home</a>
+                <a href="zebra.html" class="block py-1 text-slate-700 pl-4 border-l-2 border-blue-100 font-bold">Zebra Blinds</a>
+                <a href="contact.html" class="block py-2 font-medium text-slate-700">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-zebra text-white h-[60vh] flex items-center justify-center text-center px-4">
+        <div>
+            <span class="bg-blue-500/90 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest mb-4 inline-block shadow-lg">
+                Day & Night Control
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">The Modern Zebra Blind</h1>
+            <p class="text-xl opacity-95 max-w-2xl mx-auto drop-shadow-md">
+                The perfect blend of sheer elegance and privacy control in one innovative system.
+            </p>
+            <div class="mt-8">
+                <button onclick="openModal()" class="bg-white text-slate-900 hover:bg-gray-100 px-8 py-3.5 rounded-full font-bold text-lg transition shadow-xl">
+                    View Collection
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">1. Dual-Layer Ingenuity</h2>
+                <p class="text-slate-500 mt-2">Two layers of fabric moving in harmony.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+                            <i data-lucide="align-justify" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Sliding Stripes</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                Zebra blinds feature alternating horizontal stripes of **sheer** and **solid** fabric. By adjusting the blind slightly, you slide these layers past each other.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+                            <i data-lucide="sun" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Day Mode (Open)</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                Align the sheer stripes to let soft, filtered daylight pour into the room while maintaining a view of the outdoors.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+                            <i data-lucide="moon" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Night Mode (Closed)</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                Align the solid stripes to create a continuous block of fabric for complete privacy and light reduction.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visual Diagram Placeholder -->
+                <div class="relative h-96 bg-slate-100 rounded-2xl shadow-inner flex flex-col items-center justify-center overflow-hidden group">
+                    <img src="https://placehold.co/800x600/e2e8f0/1e40af?text=Open+vs+Closed+Mechanism" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Zebra Blind Mechanism">
+                    <div class="absolute bottom-4 bg-white/90 px-4 py-2 rounded-lg text-sm font-bold text-slate-800 shadow-sm">
+                        Slide to Adjust Light
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Style Options Section -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">2. Customize Your Aesthetic</h2>
+                <p class="text-slate-500 mt-2">Choose the texture that suits your interior design.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Standard -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition duration-300">
+                    <div class="h-40 bg-gray-100 rounded-xl mb-6 flex items-center justify-center text-gray-400 overflow-hidden">
+                        [Image: Plain Fabric]
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Standard Plain</h3>
+                    <p class="text-slate-600 text-sm">
+                        Clean, crisp lines in a variety of neutral tones (white, grey, beige). Perfect for minimalist and Scandinavian interiors.
+                    </p>
+                </div>
+
+                <!-- Textured -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-blue-500 relative transform -translate-y-2">
+                    <div class="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">TRENDING</div>
+                    <div class="h-40 bg-gray-100 rounded-xl mb-6 flex items-center justify-center text-gray-400 overflow-hidden">
+                        [Image: Textured/Weave Fabric]
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Textured Weave</h3>
+                    <p class="text-slate-600 text-sm">
+                        Add depth and warmth with linen-look or faux-wood textures. Ideal for adding character to living rooms and bedrooms.
+                    </p>
+                </div>
+
+                <!-- Dimout -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition duration-300">
+                    <div class="h-40 bg-gray-100 rounded-xl mb-6 flex items-center justify-center text-gray-400 overflow-hidden">
+                        [Image: Dark Dimout Fabric]
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Room Darkening</h3>
+                    <p class="text-slate-600 text-sm">
+                        Thicker solid stripes that block more light when closed. Great for media rooms or bedrooms needing extra privacy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motorization & Cassette Feature -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-16 text-white shadow-2xl overflow-hidden relative">
+                <!-- Background decoration -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600 rounded-full blur-[100px] opacity-20"></div>
+                
+                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-blue-400 font-bold tracking-wider uppercase text-sm">Premium Finish</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">The Perfect Alignment</h2>
+                        <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                            Zebra blinds require precise positioning to align the stripes perfectly. 
+                            <br><br>
+                            We recommend our **Smart Motorization** upgrade. With one touch, your blinds align instantly to your favorite "Day" or "Night" preset. Plus, the fabric rolls neatly into a sleek **Cassette Headrail**, hiding the roll for a polished look.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="motorization.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold transition">
+                                Explore Motorization
+                            </a>
+                            <button onclick="openModal()" class="bg-transparent border border-slate-500 text-white hover:bg-white/10 px-6 py-3 rounded-xl font-bold transition">
+                                Get a Quote
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Motor Image Placeholder -->
+                    <div class="rounded-2xl bg-slate-800 h-64 md:h-80 flex items-center justify-center border border-slate-700">
+                        <div class="text-center">
+                            <i data-lucide="zap" class="w-16 h-16 text-yellow-400 mx-auto mb-4"></i>
+                            <p class="text-slate-400 font-semibold">Somfy / Tuya Motor Compatible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="flex min-h-full items-center justify-center p-4 text-center">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="bg-white px-8 py-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900" id="modal-title">Book Free Consultation</h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-500"><i data-lucide="x" class="w-6 h-6"></i></button>
+                    </div>
+                    <form onsubmit="handleSubmit(event)" class="space-y-4">
+                        <input type="text" placeholder="Full Name" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <select class="w-full px-4 py-3 border rounded-lg bg-white outline-none">
+                            <option selected>Zebra Blinds</option>
+                            <option>Roller Blinds</option>
+                            <option>Curtains</option>
+                        </select>
+                        <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-lg shadow-lg">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
+        <p>&copy; 2025 DecoShade. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const modal = document.getElementById('quoteModal');
+        const mobileMenu = document.getElementById('mobile-menu');
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        function openModal() { modal.classList.remove('hidden'); }
+        function closeModal() { modal.classList.add('hidden'); }
+        function handleSubmit(e) { e.preventDefault(); alert("Thank you! We have received your request."); closeModal(); }
+    </script>
+</body>
+</html>

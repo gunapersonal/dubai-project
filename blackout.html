@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackout Roller Blinds - Ultimate Privacy | DecoShade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .hero-blackout {
+            /* Deep, restful color palette for the hero */
+            background-color: #0f172a;
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6)), url('https://placehold.co/1920x800/1e293b/ffffff?text=Luxury+Bedroom+Blackout');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .tech-card {
+            transition: all 0.3s ease;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-bold text-slate-900 tracking-tight">
+                <div class="bg-blue-600 text-white p-1.5 rounded-lg"><i data-lucide="layers" class="w-6 h-6"></i></div>
+                DecoShade
+            </a>
+
+            <nav class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                <a href="index.html" class="text-blue-600">Home</a>
+                <div class="relative group h-20 flex items-center">
+                    <button class="flex items-center gap-1 text-blue-600 transition">
+                        Collections <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute top-20 left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-2 border-blue-600 hidden group-hover:block overflow-hidden transition-all">
+                        <div class="p-4 space-y-1">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Soft Furnishings</p>
+                            <a href="curtains.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Luxury Curtains</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Blinds</p>
+                            <a href="blackout.html" class="block px-4 py-2 text-blue-600 bg-blue-50 rounded-lg font-semibold">Blackout Rollers</a>
+                            <a href="sunscreen.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Sunscreen / Solar</a>
+                            <a href="zebra.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Zebra (Day & Night)</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <a href="motorization.html" class="block px-4 py-2 text-blue-600 font-semibold hover:bg-blue-50 rounded-lg flex items-center gap-2">
+                                <i data-lucide="zap" class="w-4 h-4"></i> Motorization
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
+                <a href="benefits.html" class="hover:text-blue-600 transition">Why Us</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg flex items-center gap-2 text-sm">
+                    Book Free Visit <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+             <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="index.html" class="block py-2 font-medium text-blue-600">Home</a>
+                <a href="blackout.html" class="block py-1 text-slate-700 pl-4 border-l-2 border-blue-100 font-bold">Blackout Blinds</a>
+                <a href="contact.html" class="block py-2 font-medium text-slate-700">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-blackout text-white h-[60vh] flex items-center justify-center text-center px-4">
+        <div>
+            <span class="bg-indigo-500/90 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest mb-4 inline-block shadow-lg">
+                Total Privacy
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">Absolute Darkness</h1>
+            <p class="text-xl opacity-95 max-w-2xl mx-auto drop-shadow-md">
+                Experience deeper sleep and lower energy bills with our premium heat-rejecting blackout fabrics.
+            </p>
+            <div class="mt-8">
+                <button onclick="openModal()" class="bg-white text-slate-900 hover:bg-gray-100 px-8 py-3.5 rounded-full font-bold text-lg transition shadow-xl">
+                    Request a Quote
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Technology Section (3-Pass Lining) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">1. The Fabric Technology</h2>
+                <p class="text-slate-500 mt-2">Not just dark cloth. It's engineered insulation.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 flex-shrink-0">
+                            <i data-lucide="layers" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">3-Pass Thermal Coating</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                We apply three distinct layers of acrylic coating to the back of our fabrics. This ensures the fabric is 100% opaque and reflects intense UAE heat before it enters your room.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 flex-shrink-0">
+                            <i data-lucide="thermometer" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Energy Efficient</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                By blocking solar gain, our blackout blinds can lower room temperature by up to 5°C, significantly reducing your air conditioning costs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-indigo-50 rounded-2xl transform rotate-2"></div>
+                    <img src="https://placehold.co/800x600/1e293b/ffffff?text=3-Pass+Fabric+Layers" class="relative rounded-2xl shadow-2xl w-full object-cover" alt="Blackout Fabric Layers">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The System: Cassette vs Standard -->
+    <section class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">2. Choose Your System</h2>
+                <p class="text-slate-500 mt-2">Eliminate the "Light Gap" with our advanced hardware.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Standard Roller -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 tech-card">
+                    <div class="h-48 bg-slate-100 rounded-xl mb-6 overflow-hidden flex items-center justify-center text-slate-400">
+                        [Image: Standard Roller Blind]
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Standard Roller</h3>
+                    <p class="text-slate-600 mb-6">
+                        The classic choice. The fabric roll is visible or covered by a fascia. 
+                        <br><br>
+                        <span class="text-orange-600 text-sm font-semibold"><i data-lucide="alert-circle" class="w-4 h-4 inline"></i> Note: Tiny light gaps exist at the sides due to hardware clearance.</span>
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><i data-lucide="check" class="w-4 h-4 text-green-500 inline mr-2"></i> Cost-effective</li>
+                        <li><i data-lucide="check" class="w-4 h-4 text-green-500 inline mr-2"></i> Minimalist look</li>
+                    </ul>
+                </div>
+
+                <!-- Cassette + Channels -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-indigo-600 relative tech-card">
+                    <div class="absolute top-4 right-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Recommended</div>
+                    <div class="h-48 bg-slate-800 rounded-xl mb-6 overflow-hidden flex items-center justify-center text-slate-400">
+                        [Image: Cassette with Side Channels]
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Total Blockout System</h3>
+                    <p class="text-slate-600 mb-6">
+                        For 100% darkness. The fabric runs inside aluminum <strong>Side Channels</strong> and the roll is enclosed in a <strong>Cassette Box</strong>.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-700 font-medium">
+                        <li><i data-lucide="check-circle" class="w-4 h-4 text-indigo-600 inline mr-2"></i> Zero light leakage</li>
+                        <li><i data-lucide="check-circle" class="w-4 h-4 text-indigo-600 inline mr-2"></i> Reduces outside noise</li>
+                        <li><i data-lucide="check-circle" class="w-4 h-4 text-indigo-600 inline mr-2"></i> Best for nurseries & cinemas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ideal Use Cases -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Perfect For...</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 mx-auto bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600 mb-4">
+                        <i data-lucide="baby" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Nurseries</h3>
+                    <p class="text-slate-500">Ensure uninterrupted daytime naps for your little ones.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 mx-auto bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600 mb-4">
+                        <i data-lucide="film" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Home Cinemas</h3>
+                    <p class="text-slate-500">Eliminate screen glare completely for the ultimate movie experience.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 mx-auto bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600 mb-4">
+                        <i data-lucide="moon" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Shift Workers</h3>
+                    <p class="text-slate-500">Turn day into night instantly for high-quality restorative sleep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motorization CTA -->
+    <section class="bg-slate-900 py-16 px-4 sm:px-6 lg:px-8 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-indigo-600 opacity-20 blur-3xl"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Wake Up Gently</h2>
+            <p class="text-xl text-slate-300 mb-10 max-w-3xl mx-auto">
+                Blackout blinds are amazing for sleep, but waking up in pitch darkness can be hard. 
+                Add <strong>Smart Motorization</strong> to schedule your blinds to open gradually with your morning alarm.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="motorization.html" class="inline-block bg-indigo-600 text-white px-8 py-3.5 rounded-full font-bold hover:bg-indigo-500 transition shadow-lg">
+                    Explore Smart Motors
+                </a>
+                <button onclick="openModal()" class="inline-block bg-transparent border border-slate-500 text-white px-8 py-3.5 rounded-full font-bold hover:bg-white/10 transition">
+                    Get a Quote
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="flex min-h-full items-center justify-center p-4 text-center">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="bg-white px-8 py-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900" id="modal-title">Book Free Consultation</h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-500"><i data-lucide="x" class="w-6 h-6"></i></button>
+                    </div>
+                    <form onsubmit="handleSubmit(event)" class="space-y-4">
+                        <input type="text" placeholder="Full Name" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                        <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+                        <select class="w-full px-4 py-3 border rounded-lg bg-white outline-none">
+                            <option selected>Blackout Blinds</option>
+                            <option>Curtains</option>
+                            <option>Motorization</option>
+                        </select>
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 rounded-lg shadow-lg">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
+        <p>&copy; 2025 DecoShade. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const modal = document.getElementById('quoteModal');
+        const mobileMenu = document.getElementById('mobile-menu');
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        function openModal() { modal.classList.remove('hidden'); }
+        function closeModal() { modal.classList.add('hidden'); }
+        function handleSubmit(e) { e.preventDefault(); alert("Thank you! We have received your request."); closeModal(); }
+    </script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Decorus Blinds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .hero-contact {
+            /* Welcoming showroom or interaction image */
+            background-color: #1e293b;
+            background-image: linear-gradient(rgba(30, 41, 59, 0.85), rgba(30, 41, 59, 0.7)), url('https://placehold.co/1920x800/334155/ffffff?text=Design+Consultation');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .contact-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-bold text-slate-900 tracking-tight">
+                <div class="bg-blue-600 text-white p-1.5 rounded-lg"><i data-lucide="layers" class="w-6 h-6"></i></div>
+                DecoShade
+            </a>
+
+            <nav class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                <a href="index.html" class="text-blue-600">Home</a>
+                <div class="relative group h-20 flex items-center">
+                    <button class="flex items-center gap-1 hover:text-blue-600 transition">
+                        Collections <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute top-20 left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-2 border-blue-600 hidden group-hover:block overflow-hidden transition-all">
+                        <div class="p-4 space-y-1">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Soft Furnishings</p>
+                            <a href="curtains.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Luxury Curtains</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Blinds</p>
+                            <a href="blackout.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Blackout Rollers</a>
+                            <a href="sunscreen.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Sunscreen / Solar</a>
+                            <a href="zebra.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Zebra (Day & Night)</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <a href="motorization.html" class="block px-4 py-2 text-blue-600 font-semibold hover:bg-blue-50 rounded-lg flex items-center gap-2">
+                                <i data-lucide="zap" class="w-4 h-4"></i> Motorization
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
+                <a href="benefits.html" class="hover:text-blue-600 transition">Why Us</a>
+                <a href="contact.html" class="text-blue-600 font-semibold transition">Contact</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg flex items-center gap-2 text-sm">
+                    Book Free Visit <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+             <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="index.html" class="block py-2 font-medium text-blue-600">Home</a>
+                <div class="pl-4 border-l-2 border-gray-100 space-y-2">
+                    <span class="text-xs font-bold text-gray-400 uppercase">Our Products</span>
+                    <a href="curtains.html" class="block py-1 text-slate-700">Curtains & Drapes</a>
+                    <a href="blackout.html" class="block py-1 text-slate-700">Blackout Blinds</a>
+                    <a href="sunscreen.html" class="block py-1 text-slate-700">Sunscreen Blinds</a>
+                    <a href="zebra.html" class="block py-1 text-slate-700">Zebra Blinds</a>
+                </div>
+                <a href="contact.html" class="block py-2 font-medium text-slate-700">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-contact text-white h-[50vh] flex items-center justify-center text-center px-4">
+        <div>
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Let's Start Your Project</h1>
+            <p class="text-xl opacity-90 max-w-2xl mx-auto">
+                Get expert advice, browse fabrics at home, and receive a free, no-obligation quote.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Cards Grid -->
+    <section class="py-12 -mt-16 relative z-10 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Phone -->
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600 contact-card text-center">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
+                    <i data-lucide="phone" class="w-6 h-6"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Call Us</h3>
+                <p class="text-sm text-slate-500 mb-4">Speak directly to an expert.</p>
+                <a href="tel:+971562067797" class="text-blue-600 font-bold hover:underline">+971 56 206 7797</a>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-500 contact-card text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">WhatsApp</h3>
+                <p class="text-sm text-slate-500 mb-4">Instant chat & photos.</p>
+                <a href="https://wa.me/971562067797" class="text-green-600 font-bold hover:underline">Chat Now</a>
+            </div>
+
+            <!-- Email -->
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-slate-600 contact-card text-center">
+                <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-600">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Email</h3>
+                <p class="text-sm text-slate-500 mb-4">For detailed inquiries.</p>
+                <a href="mailto:info@decorus.ae" class="text-slate-700 font-bold hover:underline">info@decorus.ae</a>
+            </div>
+
+            <!-- Location -->
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-red-500 contact-card text-center">
+                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 text-red-600">
+                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Visit Us</h3>
+                <p class="text-sm text-slate-500 mb-4">JVC, Dubai, UAE</p>
+                <a href="#map" class="text-red-600 font-bold hover:underline">View Map</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Form & Map -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
+            
+            <!-- Form Side -->
+            <div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Book a Free Consultation</h2>
+                <p class="text-slate-600 mb-8">
+                    Fill out the form below, and one of our design consultants will contact you to schedule a convenient time for your home visit.
+                </p>
+
+                <form onsubmit="handleSubmit(event)" class="space-y-6 bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="+971 ...">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                        <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="john@example.com">
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Service Area</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none transition">
+                                <option>Dubai</option>
+                                <option>Abu Dhabi</option>
+                                <option>Sharjah</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Interested In</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none transition">
+                                <option>Curtains & Drapes</option>
+                                <option>Blackout Blinds</option>
+                                <option>Sunscreen Blinds</option>
+                                <option>Zebra Blinds</option>
+                                <option>Motorization</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Message (Optional)</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="Tell us a bit about your project..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg shadow-lg transition transform hover:scale-[1.02]">
+                        Schedule Free Visit
+                    </button>
+                    <p class="text-center text-xs text-slate-400 mt-4">We respect your privacy. Your details are never shared.</p>
+                </form>
+            </div>
+
+            <!-- Map Side -->
+            <div id="map" class="flex flex-col h-full">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Visit Our Showroom</h2>
+                    <p class="text-slate-600">
+                        Come see our fabrics in person and test our motorized systems.
+                        <br>
+                        <strong>Open:</strong> Monday - Saturday, 9:00 AM - 7:00 PM
+                    </p>
+                </div>
+                
+                <!-- Map Container -->
+                <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-inner flex-grow min-h-[400px] relative group">
+                    <img src="https://placehold.co/800x800/e2e8f0/64748b?text=Map+Location:+Jumeirah+Village+Circle" class="absolute inset-0 w-full h-full object-cover" alt="Map Location">
+                    <a href="https://goo.gl/maps" target="_blank" class="absolute bottom-4 right-4 bg-white px-4 py-2 rounded-lg shadow-lg text-sm font-bold text-blue-600 hover:bg-blue-50 transition">
+                        Open in Google Maps
+                    </a>
+                </div>
+
+                <!-- Quick FAQ -->
+                <div class="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-100">
+                    <h4 class="font-bold text-blue-900 mb-2 flex items-center gap-2">
+                        <i data-lucide="help-circle" class="w-5 h-5"></i> Quick Answers
+                    </h4>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li>• <strong>Coverage:</strong> We serve all of Dubai, Abu Dhabi & Sharjah.</li>
+                        <li>• <strong>Cost:</strong> Consultation and Installation are free.</li>
+                        <li>• <strong>Timing:</strong> Appointments usually available within 24 hours.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Modal (Reusable) -->
+    <div id="quoteModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="flex min-h-full items-center justify-center p-4 text-center">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="bg-white px-8 py-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900" id="modal-title">Book Free Consultation</h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-500"><i data-lucide="x" class="w-6 h-6"></i></button>
+                    </div>
+                    <form onsubmit="handleSubmit(event)" class="space-y-4">
+                        <input type="text" placeholder="Full Name" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <select class="w-full px-4 py-3 border rounded-lg bg-white outline-none">
+                            <option>Curtains & Drapes</option>
+                            <option>Roller Blinds</option>
+                            <option>General Inquiry</option>
+                        </select>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-lg shadow-lg">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
+        <p>&copy; 2025 DecoShade. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const modal = document.getElementById('quoteModal');
+        const mobileMenu = document.getElementById('mobile-menu');
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        function openModal() { modal.classList.remove('hidden'); }
+        function closeModal() { modal.classList.add('hidden'); }
+        function handleSubmit(e) { e.preventDefault(); alert("Thank you! We have received your request."); closeModal(); }
+    </script>
+</body>
+</html>

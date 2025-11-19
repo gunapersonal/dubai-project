@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Motorization - Decorus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .hero-tech {
+            /* High-tech dark theme for motorization */
+            background-color: #111827;
+            background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.7)), url('https://placehold.co/1920x800/1e293b/3b82f6?text=Smart+Home+Automation');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-bold text-slate-900 tracking-tight">
+                <div class="bg-blue-600 text-white p-1.5 rounded-lg"><i data-lucide="layers" class="w-6 h-6"></i></div>
+                DecoShade
+            </a>
+
+            <nav class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                <a href="index.html" class="text-blue-600">Home</a>
+                <div class="relative group h-20 flex items-center">
+                    <button class="flex items-center gap-1 text-blue-600 transition">
+                        Collections <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute top-20 left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-2 border-blue-600 hidden group-hover:block overflow-hidden transition-all">
+                        <div class="p-4 space-y-1">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Soft Furnishings</p>
+                            <a href="curtains.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Luxury Curtains</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Blinds</p>
+                            <a href="blackout.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Blackout Rollers</a>
+                            <a href="sunscreen.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Sunscreen / Solar</a>
+                            <a href="zebra.html" class="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">Zebra (Day & Night)</a>
+                            <div class="h-px bg-gray-100 my-2"></div>
+                            <a href="motorization.html" class="block px-4 py-2 text-blue-600 bg-blue-50 rounded-lg font-semibold flex items-center gap-2">
+                                <i data-lucide="zap" class="w-4 h-4"></i> Motorization
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
+                <a href="benefits.html" class="hover:text-blue-600 transition">Why Us</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg flex items-center gap-2 text-sm">
+                    Book Free Visit <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+             <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="index.html" class="block py-2 font-medium text-blue-600">Home</a>
+                <a href="motorization.html" class="block py-1 text-slate-700 pl-4 border-l-2 border-blue-100 font-bold">Motorized Solutions</a>
+                <a href="contact.html" class="block py-2 font-medium text-slate-700">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-tech text-white h-[60vh] flex items-center justify-center text-center px-4">
+        <div>
+            <span class="bg-blue-600/90 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest mb-4 inline-block shadow-lg animate-pulse">
+                Smart Home Ready
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">Effortless Automation</h1>
+            <p class="text-xl opacity-95 max-w-2xl mx-auto drop-shadow-md text-blue-100">
+                Control your privacy and light with a touch, a tap, or a voice command.
+            </p>
+            <div class="mt-8">
+                <button onclick="openModal()" class="bg-white text-slate-900 hover:bg-gray-100 px-8 py-3.5 rounded-full font-bold text-lg transition shadow-xl">
+                    Get a Quote
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Power Options Section (Educational) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">1. Choose Your Power Source</h2>
+                <p class="text-slate-500 mt-2">No wiring? No problem. We have solutions for every home.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Wire-Free -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="battery-charging" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Wire-Free (Rechargeable)</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Perfect for existing homes. These motors feature built-in lithium-ion batteries that only need charging once or twice a year. 
+                        <br><br>
+                        <strong>Best For:</strong> Retrofitting, apartments, and hard-to-reach windows. No electrician required.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Clean, wireless install</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Long-lasting battery life</li>
+                    </ul>
+                </div>
+
+                <!-- Hardwired -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="plug" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Hardwired (Mains Power)</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Connected directly to your home's electricity. This is a "fit and forget" solution that never requires charging and can handle heavier blinds.
+                        <br><br>
+                        <strong>Best For:</strong> New builds, renovations, and very large panoramic windows.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500"></i> Zero maintenance</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500"></i> Unlimited power for heavy curtains</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Control Methods -->
+    <section class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">2. Take Control</h2>
+                <p class="text-slate-400 mt-2">Three ways to move your shades.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-blue-500 transition group">
+                    <div class="mb-4 inline-block p-4 bg-slate-700 rounded-full group-hover:bg-blue-600 transition"><i data-lucide="gamepad-2" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold mb-2">Remote Control</h4>
+                    <p class="text-sm text-slate-400">Simple, tactile control. Operate single blinds or groups of blinds with one button press.</p>
+                </div>
+                
+                <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-blue-500 transition group">
+                    <div class="mb-4 inline-block p-4 bg-slate-700 rounded-full group-hover:bg-blue-600 transition"><i data-lucide="smartphone" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold mb-2">Smartphone App</h4>
+                    <p class="text-sm text-slate-400">Control your blinds from anywhere in the world. Set schedules to open at sunrise and close at sunset.</p>
+                </div>
+                
+                <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-blue-500 transition group">
+                    <div class="mb-4 inline-block p-4 bg-slate-700 rounded-full group-hover:bg-blue-600 transition"><i data-lucide="mic" class="w-8 h-8"></i></div>
+                    <h4 class="text-xl font-bold mb-2">Voice Command</h4>
+                    <p class="text-sm text-slate-400">"Hey Google, open the living room blinds." Fully compatible with Alexa, Google Home, and Apple HomeKit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Supported -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">What Can Be Motorized?</h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Almost everything in our collection. We partner with industry leaders like **Somfy** and **Tuya** to bring automation to:
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg border border-gray-100">
+                            <div class="bg-blue-100 p-2 rounded text-blue-600"><i data-lucide="blinds" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Roller & Zebra Blinds</h4>
+                                <p class="text-xs text-gray-500">Tubular motors hidden inside the roller tube.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg border border-gray-100">
+                            <div class="bg-purple-100 p-2 rounded text-purple-600"><i data-lucide="columns" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Curtains & Drapes</h4>
+                                <p class="text-xs text-gray-500">Electric tracks for smooth, silent gliding. Supports heavy drapes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10 p-4 bg-green-50 rounded-lg border border-green-200 inline-block">
+                        <div class="flex items-center gap-2 text-green-700 font-bold mb-1">
+                            <i data-lucide="shield-check" class="w-5 h-5"></i> Child Safe & Cordless
+                        </div>
+                        <p class="text-sm text-green-600">Motorization eliminates dangerous hanging cords, making it the safest choice for homes with children and pets.</p>
+                    </div>
+                </div>
+                
+                <div class="relative h-96 bg-gray-100 rounded-2xl shadow-xl flex items-center justify-center overflow-hidden group">
+                    <img src="https://placehold.co/800x800/e2e8f0/475569?text=Smart+Home+Hub" class="absolute inset-0 w-full h-full object-cover" alt="Smart Home Hub">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="flex min-h-full items-center justify-center p-4 text-center">
+            <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="bg-white px-8 py-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900" id="modal-title">Book Free Consultation</h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-500"><i data-lucide="x" class="w-6 h-6"></i></button>
+                    </div>
+                    <form onsubmit="handleSubmit(event)" class="space-y-4">
+                        <input type="text" placeholder="Full Name" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <select class="w-full px-4 py-3 border rounded-lg bg-white outline-none">
+                            <option selected>Motorization Inquiry</option>
+                            <option>Roller Blinds</option>
+                            <option>Curtains</option>
+                        </select>
+                        <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-lg shadow-lg">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
+        <p>&copy; 2025 DecoShade. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const modal = document.getElementById('quoteModal');
+        const mobileMenu = document.getElementById('mobile-menu');
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        function openModal() { modal.classList.remove('hidden'); }
+        function closeModal() { modal.classList.add('hidden'); }
+        function handleSubmit(e) { e.preventDefault(); alert("Thank you! We have received your request."); closeModal(); }
+    </script>
+</body>
+</html>
