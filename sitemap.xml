@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="[suspicious link removed]">
+
+<!-- Homepage (Highest Priority) -->
+<url>
+    <loc>https://www.decoshade.ae/index.html</loc>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+</url>
+
+<!-- Core Product Pages -->
+<url>
+    <loc>https://www.decoshade.ae/curtains.html</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+</url>
+<url>
+    <loc>https://www.decoshade.ae/blackout.html</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+</url>
+<url>
+    <loc>https://www.decoshade.ae/sunscreen.html</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+</url>
+<url>
+    <loc>https://www.decoshade.ae/zebra.html</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+</url>
+<url>
+    <loc>https://www.decoshade.ae/motorization.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+</url>
+
+<!-- Utility & Information Pages -->
+<url>
+    <loc>https://www.decoshade.ae/gallery.html</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>https://www.decoshade.ae/benefits.html</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>https://www.decoshade.ae/about.html</loc>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>https://www.decoshade.ae/contact.html</loc>
+    <priority>0.5</priority>
+    <changefreq>weekly</changefreq>
+</url>
+<url>
+    <loc>https://www.decoshade.ae/faq.html</loc>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>https://www.decoshade.ae/terms.html</loc>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
+</url>
+
+
+</urlset>
