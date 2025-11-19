@@ -1,0 +1,10 @@
+robots.txt file for DecoShade.ae
+
+Allow all web crawlers to access the site
+
+User-agent: *
+Allow: /
+
+Specify the location of the XML Sitemap
+
+Sitemap: https://www.google.com/url?sa=E&source=gmail&q=https://www.decoshade.ae/sitemap.xml
